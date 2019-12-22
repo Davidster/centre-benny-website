@@ -1,8 +1,7 @@
 #!/bin/bash
 
 . vars.sh
-TIMESTAMP=$(date +"%m-%d-%y-%T")
-BACKUP_FILE_NAME="benny-wp-backup-$TIMESTAMP.tar.gz"
+BACKUP_FILE_NAME="benny-wp-backup-$(date +"%m-%d-%y-%T").tar.gz"
 
 set -e
 
@@ -11,11 +10,9 @@ if [[ $EUID -ne 0 ]]; then
    exit 1
 fi
 
-cd /root
-
 # create backup
 $BITNAMI_DIR/ctlscript.sh stop
-tar -pczvf $BACKUP_FILE_NAME .
+tar -pczvf $BACKUP_FILE_NAME $BITNAMI_DIR
 $BITNAMI_DIR/ctlscript.sh stop
 
 # upload backup to S3

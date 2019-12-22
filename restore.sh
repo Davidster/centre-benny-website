@@ -11,6 +11,7 @@ fi
 
 if [ $# -eq 0 ]; then
     echo "No arguments provided"
+    echo "Usage: $0 BACKUP_S3_OBJECT_NAME"
     exit 1
 fi
 
@@ -26,7 +27,7 @@ $BITNAMI_DIR/ctlscript.sh stop
 rm -rf /tmp/bitnami-backup
 mv /opt/bitnami /tmp/bitnami-backup
 mkdir /opt/bitnami
-tar -pxzvf BACKUP_FILE_NAME -C /opt/bitnami
+tar -pxzvf $BACKUP_FILE_NAME -C /opt/bitnami
 
 # clean up
-rm BACKUP_FILE_NAME
+rm $BACKUP_FILE_NAME
