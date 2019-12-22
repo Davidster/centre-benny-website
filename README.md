@@ -2,8 +2,6 @@
 
 Management scripts/info for website of Centre Benny
 
-<!--- comment test -->
-
 ## Initial setup instructions:
 
 - Create Amazon Lighsail instance with Bitnami Wordpress pre-installed
@@ -42,6 +40,7 @@ Management scripts/info for website of Centre Benny
 ```
 - Create IAM credentials which grant programmatic access to the above permission
 - SSH into the lightsail server and run the following commands:
+<!--- ssh keys in ~/.aws/bennyserver.csv -->
 ```
 sudo aws configure # enter IAM keys + region for S3 bucket access
 git clone https://github.com/Davidster/centre-benny-website.git
