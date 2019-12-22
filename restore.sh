@@ -33,3 +33,5 @@ $BITNAMI_DIR/ctlscript.sh start
 
 # clean up
 rm "$BACKUP_FILE_NAME"
+
+echo "Restore succeeded"

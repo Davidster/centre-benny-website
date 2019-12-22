@@ -22,3 +22,5 @@ aws s3 cp "$BACKUP_FILE_NAME" s3://$BACKUP_S3_BUCKET
 
 # clean up
 rm "$BACKUP_FILE_NAME"
+
+echo "Backup succeeded"
