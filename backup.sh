@@ -14,7 +14,7 @@ fi
 
 # create backup
 $BITNAMI_DIR/ctlscript.sh stop
-tar -pczvf "$BACKUP_FILE_NAME" $BITNAMI_DIR
+tar -pczf "$BACKUP_FILE_NAME" $BITNAMI_DIR
 $BITNAMI_DIR/ctlscript.sh start
 
 # upload backup to S3
