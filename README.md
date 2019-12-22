@@ -1,5 +1,3 @@
-# centre-benny-website
-
 Management scripts/info for website of Centre Benny
 
 ## Initial setup instructions:

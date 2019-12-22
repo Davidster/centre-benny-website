@@ -25,6 +25,7 @@ rm -rf /tmp/bitnami-backup
 mv $BITNAMI_DIR /tmp/bitnami-backup
 mkdir $BITNAMI_DIR
 tar -pxzvf $BACKUP_FILE_NAME -C $BITNAMI_DIR
+$BITNAMI_DIR/ctlscript.sh start
 
 # clean up
 rm $BACKUP_FILE_NAME
