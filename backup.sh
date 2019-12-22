@@ -1,9 +1,11 @@
 #!/bin/bash
 
+set -e
+
+cd "$(dirname "$0")"
+
 . vars.sh
 BACKUP_FILE_NAME="benny-wp-backup-$(date +"%m-%d-%y-%H-%M-%S-%Z").tar.gz"
-
-set -e
 
 if [[ $EUID -ne 0 ]]; then
    echo "This script must be run as root" 
