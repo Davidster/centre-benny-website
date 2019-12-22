@@ -12,6 +12,9 @@ if [[ $EUID -ne 0 ]]; then
    exit 1
 fi
 
+echo "|- FULL WORDPRESS BACKUP STARTED -|"
+echo "Backup name: $BACKUP_FILE_NAME"
+
 # create backup
 $BITNAMI_DIR/ctlscript.sh stop
 tar -pczf "$BACKUP_FILE_NAME" $BITNAMI_DIR
@@ -23,4 +26,5 @@ aws s3 cp --no-progress "$BACKUP_FILE_NAME" s3://$BACKUP_S3_BUCKET
 # clean up
 rm "$BACKUP_FILE_NAME"
 
-echo "Backup succeeded"
+echo "|- FULL WORDPRESS BACKUP COMPLETE -|"
+echo "End time: $(date +"%m-%d-%y-%H-%M-%S-%Z")"
