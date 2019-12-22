@@ -18,7 +18,7 @@ tar -pczf "$BACKUP_FILE_NAME" $BITNAMI_DIR
 $BITNAMI_DIR/ctlscript.sh start
 
 # upload backup to S3
-aws s3 cp "$BACKUP_FILE_NAME" s3://$BACKUP_S3_BUCKET
+aws s3 cp --no-progress "$BACKUP_FILE_NAME" s3://$BACKUP_S3_BUCKET
 
 # clean up
 rm "$BACKUP_FILE_NAME"
