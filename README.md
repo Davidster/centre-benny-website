@@ -55,3 +55,7 @@ This can be done by editing the file `/etc/crontab`. Add the following to the bo
 ```
 0 7 * * MON root /home/bitnami/centre-benny-website/backup.sh >> /home/bitnami/benny-backups.log 2>&1
 ```
+
+### SSL Instructions
+
+Follow [this tutorial](https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-using-lets-encrypt-certificates-with-wordpress). For the Route53 TXT record, you can set multiple values by adding the two strings separated by a newline.
