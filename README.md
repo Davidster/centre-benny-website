@@ -51,10 +51,7 @@ cd ~
 git clone https://github.com/Davidster/centre-benny-website.git
 ```
 - Create a cron job for running the backup script on Monday mornings at 7AM UTC. 
-This can be done by running the command `crontab -e` and adding the following to the bottom of the crontab file:
+This can be done by editing the file `/etc/crontab`. Add the following to the bottom of it:
 ```
-0 7 * * MON ...
+0 7 * * MON root /home/bitnami/centre-benny-website/backup.sh >> /home/bitnami/benny-backups.log 2>&1
 ```
-- *TODO: instructions for CRON backup script (`0 7 * * MON`)*
-
-Watch cron logs: `tail -f -n +1 /var/log/syslog | grep CRON`
