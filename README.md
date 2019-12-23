@@ -40,7 +40,21 @@ Management scripts/info for website of Centre Benny
 - SSH into the lightsail server and run the following commands:
 <!--- ssh keys in ~/.aws/bennyserver.csv -->
 ```
-sudo aws configure # enter IAM keys + region for S3 bucket access
+sudo apt update
+sudo apt install python3 python3-pip
+sudo pip3 install awscli
+aws configure
+sudo su
+aws configure # enter IAM keys + region for S3 bucket access
+exit
+cd ~
 git clone https://github.com/Davidster/centre-benny-website.git
 ```
+- Create a cron job for running the backup script on Monday mornings at 7AM UTC. 
+This can be done by running the command `crontab -e` and adding the following to the bottom of the crontab file:
+```
+0 7 * * MON ...
+```
 - *TODO: instructions for CRON backup script (`0 7 * * MON`)*
+
+Watch cron logs: `tail -f -n +1 /var/log/syslog | grep CRON`
