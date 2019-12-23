@@ -5,7 +5,7 @@ set -e
 cd "$(dirname "$0")"
 
 . vars.sh
-BACKUP_FILE_NAME="benny-wp-backup-$(date +"%m-%d-%y-%H-%M-%S-%Z").tar.gz"
+BACKUP_FILE_NAME="benny-wp-backup-$(date +"%y-%m-%d-%H-%M-%S-%Z").tar.gz"
 
 if [[ $EUID -ne 0 ]]; then
    echo "This script must be run as root" 
@@ -27,4 +27,4 @@ aws s3 cp "$BACKUP_FILE_NAME" s3://$BACKUP_S3_BUCKET --no-progress
 rm "$BACKUP_FILE_NAME"
 
 echo "|- FULL WORDPRESS BACKUP COMPLETE -|"
-echo "End time: $(date +"%m-%d-%y-%H-%M-%S-%Z")"
+echo "End time: $(date +"%y-%m-%d-%H-%M-%S-%Z")"
