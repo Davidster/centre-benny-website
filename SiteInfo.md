@@ -74,5 +74,3 @@ Center Haunted House                        Comm. Center
 - Fridays 6:30pm-9:30pm
 - In-person registration on the first friday of the 12-week period
   Registration capacity of 15
-
-
